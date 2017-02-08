@@ -1,11 +1,10 @@
 
 #include "DetectionObstacle.h"
-#include "stdafx.h"
 #include <stdio.h>
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include "opencv\cv.h"
-
+#include "targetver.h"
 
 #include <opencv2/opencv.hpp>
 #include "opencv\highgui.h"
