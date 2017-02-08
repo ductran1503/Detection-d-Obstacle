@@ -154,7 +154,7 @@ void classifyHV(long histogramH[], long histogramV[], long hue_thresholds, long 
 	}
 }
 
-void detectObstacle(Mat im, long histogramH[], long histogramV[])
+Mat detectObstacle(Mat im, long histogramH[], long histogramV[])
 {
 	Mat detection(im.rows, im.cols, CV_8UC1);
 	int nbrows = im.rows;
@@ -168,8 +168,8 @@ void detectObstacle(Mat im, long histogramH[], long histogramV[])
 			detection.at<uchar>(i, j) = 255 * histogramH[pixel.val[0]] * histogramV[pixel.val[2]];
 		}
 	}
-
-	imshow("detection", detection);
+	return detection;
+	
 }
 
 

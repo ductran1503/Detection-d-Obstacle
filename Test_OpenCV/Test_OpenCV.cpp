@@ -14,8 +14,9 @@ int main(int argc, const char** argv)
 	long histogramH[361];
 	long histogramV[361];
 	int sigma = (n - 1) / 6;
-	Mat img = imread("image5.jpg", CV_LOAD_IMAGE_UNCHANGED);
-
+	//Mat img = imread("image5.jpg", CV_LOAD_IMAGE_UNCHANGED);
+	IplImage* iplImg = cvLoadImage("image5.jpg");
+	Mat img(iplImg);
 	if (img.empty())
 	{
 		cout << "Error : Image cannot be loaded..!!" << endl;
@@ -53,7 +54,12 @@ int main(int argc, const char** argv)
 
 	imshow("Image HSV", imgHSV);
 
-	detectObstacle(imgHSV, histogramH, histogramV);
+	
+	Mat detection = detectObstacle(imgHSV, histogramH, histogramV);
+	
+	IplImage* ipl_detection = cvCloneImage(&(IplImage)detection);
+	Mat detection2(ipl_detection);
+	imshow("detection", detection2);
 
 	waitKey(0); //wait infinite time for a keypress
 

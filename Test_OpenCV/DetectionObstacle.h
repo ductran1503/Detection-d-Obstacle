@@ -31,5 +31,5 @@ void validatePixel(Mat im, Mat *mask, int min_intensity, int min_staturation);
 void showHistogram(long histogramH[], long histogramV[]);
 void fonction_trapeze(Mat img, int d, int h, double alpha);
 void calHistogram(Mat img, int d, int h, float alpha, long histogramH[], long histogramV[], Mat masque);
-void detectObstacle(Mat im, long histogramH[], long histogramV[]);
+Mat detectObstacle(Mat im, long histogramH[], long histogramV[]);
 void classifyHV(long histogramH[], long histogramV[], long hue_thresholds, long intensity_thresholds);
