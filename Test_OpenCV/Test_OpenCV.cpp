@@ -25,7 +25,7 @@ int main(int argc, const char** argv)
 
 	GaussianBlur(img, img_Filter, Size(n, n), sigma, 0);
 
-	cvtColor(img_Filter, imgHSV, COLOR_BGR2HSV);
+	cvtColor(img_Filter, imgHSV, COLOR_RGB2HSV);
 
 	int posX = img.rows;
 	int posY = img.cols;
